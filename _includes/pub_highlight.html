@@ -4,6 +4,25 @@
   </a>
   <div class="media-body">
     <p class="media-heading">
+      <strong>SWCaffe: A Deep Learning Framework for the Sunway TaihuLight}</strong><br/><br />
+      <a href="assets/pdf/swcaffe.pdf">[Technical Report PDF]</a>
+    </p>
+    <p class="abstract-text">
+    Based on our previous work swDNN, we propose the SWCaffe \cite{url:swcaffe} which maps one of the most popular deep learning framework Caffe to the Sunway TaihuLight.
+    SWCaffe is a fully optimized framework where major memory and computing operations are conducted on CPEs of SW26010.
+    We categorize operations in a DNN as computing-centric and memory-centric kernels and provide parallel design for them considering the architectural characteristics.
+    We compare the performance in one CG (742.4 GFlops) with intel 12-core E52680 V3 CPU (1280 GFlops).
+Our framework beats intel-Caffe with a speedup of 1.50x on VGG-16 network with single-precision floating-point data.
+    </p> 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="assets/img/swdnnlogo.png" width="96px" height="96px"/>
+  </a>
+  <div class="media-body">
+    <p class="media-heading">
       <strong>swDNN: A Library for Accelerating Deep Learning Applications on Sunway TaihuLight Supercomputer</strong><br />
      Jiarui Fang, Haohuan Fu, et al., 31st IEEE International Parallel & Distributed Processing Symposium (IPDPS 2017), 2017.6<br />
       <a href="assets/pdf/swdnn-ipdps-2017.pdf">[Conference PDF]</a>
