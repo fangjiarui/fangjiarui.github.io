@@ -8,22 +8,25 @@ title: Jiarui Fang
 <h3>Jiarui Fang (方佳瑞)</h3>
 <h5><a href="mailto:fangjiarui123@gmail.com">fangjiarui123 AT gmail.com</a></h5>
 <p>
-  I am currently a software engineer at ByteDance, leading the Volcano Machine Learning Platform (veMLP) team. Before joining ByteDance, I was a principal software engineer at Tencent.
+  I am currently a software engineer at ByteDance, leading a team focused on LLM/DiT training, inference, and reinforcement learning (RL). In this role, I am responsible for the Volcano Machine Learning Platform (veMLP) team and the Volcano Ark seedance/seedream MaaS (Model-as-a-Service) service.
+</p>
+<p>
+  My team is continuously hiring talented individuals interested in AI infrastructure and large model technologies. If you're passionate about building cutting-edge ML systems, feel free to reach out to me via email.
 </p>
 <p>
   My passion for open-source has led me to initiate and lead several impactful projects, including:
 </p>
 <ul>
-   <li><a href="https://github.com/xdit-project/xDiT">xDiT</a> (⭐️2.3k): A scalable inference engine for Diffusion Transformers (DiTs) on multi-GPUs.</li>
-   <li><a href="https://github.com/hpcaitech/ColossalAI">ColossalAI</a> (⭐️41.2k): A unified parallel training framework for large language models, which I led as CTO at HPCAI-Tech.</li>
-   <li><a href="https://github.com/Tencent/PatrickStar">PatrickStar</a> (⭐️766): An efficient parallel training framework for large language models, now a core component of ColossalAI. It is used to train Tencent's <a href="https://hunyuan.tencent.com/">Hunyuan LLM</a> and is adopted by Alibaba Cloud's <a href="https://github.com/alibaba/Pai-Megatron-Patch">Pai-Megatron-Patch</a>. My contributions to this open-source project earned me Tencent's highest individual award in 2021.</li>
-   <li><a href="https://github.com/Tencent/TurboTransformers">TurboTransformers</a> (⭐️1.5k): A high-performance inference runtime for Transformers.</li>
+   <li><a href="https://github.com/xdit-project/xDiT">xDiT</a> (⭐️<span id="xdit-stars">...</span>): A scalable inference engine for Diffusion Transformers (DiTs) on multi-GPUs.</li>
+   <li><a href="https://github.com/hpcaitech/ColossalAI">ColossalAI</a> (⭐️<span id="colossalai-stars">...</span>): A unified parallel training framework for large language models, which I led as CTO at HPCAI-Tech.</li>
+   <li><a href="https://github.com/Tencent/PatrickStar">PatrickStar</a> (⭐️<span id="patrickstar-stars">...</span>): An efficient parallel training framework for large language models, now a core component of ColossalAI. It is used to train Tencent's <a href="https://hunyuan.tencent.com/">Hunyuan LLM</a> and is adopted by Alibaba Cloud's <a href="https://github.com/alibaba/Pai-Megatron-Patch">Pai-Megatron-Patch</a>. My contributions to this open-source project earned me Tencent's highest individual award in 2021.</li>
+   <li><a href="https://github.com/Tencent/TurboTransformers">TurboTransformers</a> (⭐️<span id="turbotransformers-stars">...</span>): A high-performance inference runtime for Transformers.</li>
 </ul>
 <p>
   From 2022 to 2023, I gained valuable experience in the startup world. I was a technical partner at LightYearAI, where I built and led a team of over 20 engineers focused on data curation for large language model pre-training. The company was acquired by Meituan just three months after its inception. Prior to that, I was the CTO of HPCAI-Tech for a whole year, a startup dedicated to open-source AI infrastructure at that time.
 </p>
 <p>
-  Earlier in my career, I was a senior engineer at WeChat AI (Tencent), where I focused on improving the efficiency of AI applications through parallel computing. I also contributed to the development of foundational modules in the WeChat app, such as the <a href="https://z.weixin.qq.com/">WeChat Input Method Engine</a>.
+  Before joining ByteDance, I was a principal software engineer at Tencent. I also contributed to the development of foundational modules in the WeChat app, such as the <a href="https://z.weixin.qq.com/">WeChat Input Method Engine</a>.
 </p>
 <p>
   I earned my Ph.D. in Computer Science from Tsinghua University in 2019, advised by Prof. <a href="https://www.cs.tsinghua.edu.cn/info/1107/3507.htm">Guangwen Yang</a> and Prof. <a href="http://47.94.243.94/mediawiki/index.php/Haohuan_Fu">Haohuan Fu</a>. My doctoral research was titled <i>Parallel Deep Learning Training System on Sunway TaihuLight</i>. I was also a visiting scholar at the University of California, Davis, supervised by <a href="https://web.cs.ucla.edu/~chohsieh/">Cho-Jui Hsieh</a> from 2018 to 2019. I received my B.S. in Computer Science from Beijing University of Posts and Telecommunications in 2014.
@@ -54,6 +57,37 @@ title: Jiarui Fang
 {% include teaching.html %}
 -->
 
-<body>
-<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=IUauw8ewM48TcdV7vaC71gwnoW5ILE5GvL1ZyMOfBh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
-</body>
+<div id="clustrmaps-container" style="width: 300px; height: 300px; margin: 20px 0;"></div>
+<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=IUauw8ewM48TcdV7vaC71gwnoW5ILE5GvL1ZyMOfBh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+<script>
+// Function to fetch GitHub star count
+function fetchGitHubStars(repo, elementId) {
+  const url = `https://api.github.com/repos/${repo}`;
+
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok');
+    })
+    .then(data => {
+      const stars = data.stargazers_count;
+      // Format with k for thousands
+      const formattedStars = stars >= 1000 ? (stars / 1000).toFixed(1) + 'k' : stars;
+      document.getElementById(elementId).textContent = formattedStars;
+    })
+    .catch(error => {
+      console.log('Error fetching GitHub stars:', error);
+      // Keep the placeholder if there's an error
+    });
+}
+
+// Fetch stars for all repositories
+document.addEventListener('DOMContentLoaded', () => {
+  fetchGitHubStars('xdit-project/xDiT', 'xdit-stars');
+  fetchGitHubStars('hpcaitech/ColossalAI', 'colossalai-stars');
+  fetchGitHubStars('Tencent/PatrickStar', 'patrickstar-stars');
+  fetchGitHubStars('Tencent/TurboTransformers', 'turbotransformers-stars');
+});
+</script>
