@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Jiarui Fang</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Le styles -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/assets/css/yangqing.css" rel="stylesheet">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div><!-- Do I want to show a pic on the phone screen?-->
+---
+layout: default
+title: Jiarui Fang
+---
+<div><!-- Do I want to show a pic on the phone screen?-->
 <div class="rightphoto"><img src="assets/img/fangjiaruiv3.jpeg" alt="photo" width="200px" /></div>
 <div class="leftpad">
 <h3>Jiarui Fang (方佳瑞)</h3>
@@ -29,11 +10,9 @@
 <p>
   I am currently a software engineer at ByteDance, leading a team focused on LLM/DiT training, inference, and reinforcement learning (RL). In this role, I am responsible for the Volcano Machine Learning Platform (veMLP) team and the Volcano Ark seedance/seedream MaaS (Model-as-a-Service) service.
 </p>
-<div class="hiring-highlight">
-  <p>
-    <strong>🎯 We're Hiring!</strong> My team is continuously hiring talented individuals interested in AI infrastructure and large model technologies. If you're passionate about building cutting-edge ML systems, feel free to reach out to me via email.
-  </p>
-</div>
+<p>
+  My team is continuously hiring talented individuals interested in AI infrastructure and large model technologies. If you're passionate about building cutting-edge ML systems, feel free to reach out to me via email.
+</p>
 <p>
   My passion for open-source has led me to initiate and lead several impactful projects, including:
 </p>
@@ -67,38 +46,7 @@
   <a name='software'></a> Software 
 </h3>
 
-<div class="media">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="assets/img/mincepie.png" width="96px" height="96px"/>
-  </a>
-  <div class="media-body">
-    <p class="media-heading">
-      <strong>
-      	<a href="https://github.com/Yangqing/mincepie">Mincepie: lightweighted Mapreduce</a>
-      </strong>
-    </p>
-    <p class="abstract-text">
-      A lightweighted mapreduce implementation purely written in Python. It's not the powerful yellow elephant, but is worth 30 minutes' learning time. Check <a href="https://gist.github.com/Yangqing/5596077" target="_blank">the script</a> that extracts gist features from all ImageNet images!
-    </p>
-  </div>
-</div>
-
-<div class="media">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="assets/img/decaf.png" width="96px" height="96px"/>
-  </a>
-  <div class="media-body">
-    <p class="media-heading">
-      <strong>
-      	<a href="http://decaf.no-ip.org">Decaf</a>
-      </strong>
-    </p>
-    <p class="abstract-text">
-    Decaf is a general python framework for deep convolutional neural networks, relying on a set of scientific computation modules (such as numpy/scipy) to efficiently run CNN models without the need of a GPU. Decaf is still under development but an imagenet classification demo could be checked out <a href="http://decaf.berkeleyvision.org">here</a>.
-    </p>
-  </div>
-</div>
-
+{% include software.html %}
 --><!--
  *** Teaching ***
 
@@ -106,38 +54,7 @@
   <a name='teaching'></a> Teaching (GSI)
 </h3>
 
-<div class="media">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="assets/img/cs188.png" width="96px" height="96px"/>
-  </a>
-  <div class="media-body">
-    <p class="media-heading">
-      <strong>
-      	<a href="http://inst.eecs.berkeley.edu/~cs188/sp12/">CS188 Artificial Intelligence</a>
-      </strong>, spring 2012.
-    </p>
-    <p class="abstract-text">
-      Undergraduate AI course: search, CSP, games, MDP, Reinforcement Learning, Bayes' Nets, HMM, DBN, probabilistic inference, and a fun PacMan challenge.<br />
-      Won the campus Outstanding GSI Award.
-    </p>
-  </div>
-</div>
-
-<div class="media">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="assets/img/cs281a.png" width="96px" height="96px"/>
-  </a>
-  <div class="media-body">
-    <p class="media-heading">
-      <strong>
-      	<a href="http://inst.eecs.berkeley.edu/~cs281a/"> CS281a/Stat241a Statistical Learning Theory</a>
-      </strong>, fall 2011.
-    </p>
-    <p class="abstract-text">
-      Graduate level course: graphical models, probabilistic inference, parameter estimation, regression, exponential family, EM and HMM, factor analysis, Junction Tree Algorithm, Monte Carlo, Variational Inference, etc.
-    </p>
-  </div>
-</div>
+{% include teaching.html %}
 -->
 
 <div id="clustrmaps-container" style="width: 300px; height: 300px; margin: 20px 0;"></div>
@@ -174,31 +91,3 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchGitHubStars('Tencent/TurboTransformers', 'turbotransformers-stars');
 });
 </script>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer
-    ================================================== -->
-    <hr>
-    <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <p>&copy; Jiarui Fang 2017</p>
-        </div>
-      </div>
-    </div>
-    </footer>
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-  </body>
-</html>
