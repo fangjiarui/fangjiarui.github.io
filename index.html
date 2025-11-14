@@ -17,10 +17,10 @@ title: Jiarui Fang
   My passion for open-source has led me to initiate and lead several impactful projects, including:
 </p>
 <ul>
-   <li><a href="https://github.com/xdit-project/xDiT">xDiT</a> (⭐️2.3k): A scalable inference engine for Diffusion Transformers (DiTs) on multi-GPUs.</li>
-   <li><a href="https://github.com/hpcaitech/ColossalAI">ColossalAI</a> (⭐️41.2k): A unified parallel training framework for large language models, which I led as CTO at HPCAI-Tech.</li>
-   <li><a href="https://github.com/Tencent/PatrickStar">PatrickStar</a> (⭐️766): An efficient parallel training framework for large language models, now a core component of ColossalAI. It is used to train Tencent's <a href="https://hunyuan.tencent.com/">Hunyuan LLM</a> and is adopted by Alibaba Cloud's <a href="https://github.com/alibaba/Pai-Megatron-Patch">Pai-Megatron-Patch</a>. My contributions to this open-source project earned me Tencent's highest individual award in 2021.</li>
-   <li><a href="https://github.com/Tencent/TurboTransformers">TurboTransformers</a> (⭐️1.5k): A high-performance inference runtime for Transformers.</li>
+   <li><a href="https://github.com/xdit-project/xDiT">xDiT</a> (⭐️<span id="xdit-stars">...</span>): A scalable inference engine for Diffusion Transformers (DiTs) on multi-GPUs.</li>
+   <li><a href="https://github.com/hpcaitech/ColossalAI">ColossalAI</a> (⭐️<span id="colossalai-stars">...</span>): A unified parallel training framework for large language models, which I led as CTO at HPCAI-Tech.</li>
+   <li><a href="https://github.com/Tencent/PatrickStar">PatrickStar</a> (⭐️<span id="patrickstar-stars">...</span>): An efficient parallel training framework for large language models, now a core component of ColossalAI. It is used to train Tencent's <a href="https://hunyuan.tencent.com/">Hunyuan LLM</a> and is adopted by Alibaba Cloud's <a href="https://github.com/alibaba/Pai-Megatron-Patch">Pai-Megatron-Patch</a>. My contributions to this open-source project earned me Tencent's highest individual award in 2021.</li>
+   <li><a href="https://github.com/Tencent/TurboTransformers">TurboTransformers</a> (⭐️<span id="turbotransformers-stars">...</span>): A high-performance inference runtime for Transformers.</li>
 </ul>
 <p>
   From 2022 to 2023, I gained valuable experience in the startup world. I was a technical partner at LightYearAI, where I built and led a team of over 20 engineers focused on data curation for large language model pre-training. The company was acquired by Meituan just three months after its inception. Prior to that, I was the CTO of HPCAI-Tech for a whole year, a startup dedicated to open-source AI infrastructure at that time.
@@ -59,4 +59,36 @@ title: Jiarui Fang
 
 <body>
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=IUauw8ewM48TcdV7vaC71gwnoW5ILE5GvL1ZyMOfBh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+<script>
+// Function to fetch GitHub star count
+function fetchGitHubStars(repo, elementId) {
+  const url = `https://api.github.com/repos/${repo}`;
+
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok');
+    })
+    .then(data => {
+      const stars = data.stargazers_count;
+      // Format with k for thousands
+      const formattedStars = stars >= 1000 ? (stars / 1000).toFixed(1) + 'k' : stars;
+      document.getElementById(elementId).textContent = formattedStars;
+    })
+    .catch(error => {
+      console.log('Error fetching GitHub stars:', error);
+      // Keep the placeholder if there's an error
+    });
+}
+
+// Fetch stars for all repositories
+document.addEventListener('DOMContentLoaded', () => {
+  fetchGitHubStars('xdit-project/xDiT', 'xdit-stars');
+  fetchGitHubStars('hpcaitech/ColossalAI', 'colossalai-stars');
+  fetchGitHubStars('Tencent/PatrickStar', 'patrickstar-stars');
+  fetchGitHubStars('Tencent/TurboTransformers', 'turbotransformers-stars');
+});
+</script>
 </body>
